@@ -1,3 +1,8 @@
+# Archived, explicitly abridged diagnostic excerpt/transcription from an earlier
+# private-app session, not a complete raw capture or a fresh reproduction.
+# An independently authenticated raw original is not available here; raw
+# provenance was not reverified. Error text and digests are retained as recorded.
+
 $ npx next build --experimental-build-mode compile   # exit 0
 $ npx next build --experimental-build-mode generate --debug-prerender
 
@@ -36,10 +41,11 @@ TypeError: Cannot read properties of null (reading 'useContext')
 	/_global-error/page: /_global-error
 
 # ---------------------------------------------------------------------------
-# Verbatim (abridged to the relevant section) from the affected production
-# app. The "Invalid hook call" + the key warnings around
-# <__next_viewport_boundary__>/<head>/<meta> appear immediately before the
-# crash. React 19.3.1 is a single deduped copy in this app (npm ls confirms);
-# the hook is executing with a null dispatcher while the framework
-# synthesizes the /_global-error document.
+# Earlier notes attribute this abridged excerpt/transcription to the affected
+# production app. It records "Invalid hook call" and key warnings around
+# <__next_viewport_boundary__>/<head>/<meta> before the crash; their order
+# does not prove a metadata/viewport or hook-dispatcher root cause.
+# Notes reported React 19.3.1 as a single deduped copy via npm ls; that check
+# was not rerun here. The trigger and root cause remain unisolated, and a
+# Next.js framework fault is not proven. Raw provenance was not reverified.
 # ---------------------------------------------------------------------------
