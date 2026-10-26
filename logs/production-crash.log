@@ -1,0 +1,31 @@
+$ npx next build --experimental-build-mode generate
+
+▲ Next.js 16.4.3 (Turbopack)
+- Local:        http://localhost:3000
+- Network:      http://localhost:3000
+
+⚠ Missing required secrets: BACKEND_PROXY_SECRET. Add them to .dev.vars, .env, or set as environment variables.
+
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/2) ...
+Error occurred prerendering page "/_global-error". Read more: https://nextjs.org/docs/messages/prerender-error
+TypeError: Cannot read properties of null (reading 'useContext')
+    at ignore-listed frames {
+  digest: '1339301996'
+}
+Export encountered an error on /_global-error/page: /_global-error, exiting the build.
+⨯ Next.js build worker exited with code: 1 and signal: null
+
+# ---------------------------------------------------------------------------
+# Verbatim output from the affected production app (Windows, Next 16.4.3,
+# React 19.3.1, Turbopack). The same crash was observed on Next 16.4.1 with
+# digests 4044437173 / 2334139114, and on 16.4.3 with digests 1322144938 and
+# 1259413171 (clean, isolated dist dir). Digest 1339301996 recurred across
+# every 16.4.3 code state tested (metadata export present/absent, viewport
+# present/absent, manual hoisted <title>/<meta> tags present/absent, custom
+# global-error.tsx present/absent).
+#
+# The bug is nondeterministic: one identical source state completed green
+# (2/2 pages) once, and then crashed twice on re-test with a clean dist dir.
+# See README.md for the full evidence matrix.
+# ---------------------------------------------------------------------------

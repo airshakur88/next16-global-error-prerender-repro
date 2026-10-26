@@ -1,0 +1,8 @@
+{
+	"name": "next-global-error-repro",
+	"compatibility_date": "2026-10-01",
+	"vars": {
+		"BACKEND_API_URL": "https://backend.example.workers.dev",
+		"FRONTEND_ORIGIN": "https://frontend.example.workers.dev"
+	}
+}

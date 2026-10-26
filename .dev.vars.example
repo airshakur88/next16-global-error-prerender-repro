@@ -1,0 +1,3 @@
+# Dummy values only — copy to .dev.vars before building.
+# initOpenNextCloudflareForDev() (called from next.config.ts) reads these.
+BACKEND_PROXY_SECRET=dummy-repro-secret
